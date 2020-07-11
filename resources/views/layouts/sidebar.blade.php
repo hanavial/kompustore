@@ -20,13 +20,13 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/')}}">
+        <a class="nav-link" href="{{url('/master')}}">
           <i class="menu-icon typcn typcn-document-text"></i>
           <span class="menu-title">Master</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/')}}">
+        <a class="nav-link" href="{{url('/penjualan')}}">
           <i class="menu-icon typcn typcn-document-text"></i>
           <span class="menu-title">Penjualan</span>
         </a>

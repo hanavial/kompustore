@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::view('/', 'home');
+Route::view('/master', 'pages.master.index');
+Route::view('/penjualan', 'pages.penjualan.index');
