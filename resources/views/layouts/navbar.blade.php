@@ -6,7 +6,7 @@
         </a>
         <a class="navbar-brand brand-logo-mini mt-1" href="{{url('/')}}">
             {{-- <img src="{{url('assets/images/logo-mini.svg')}}" alt="logo" /> --}}
-            
+
         </a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -31,7 +31,7 @@
             <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
             <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
             <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-            <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
+            <a class="dropdown-item" href="">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
           </div>
         </li>
       </ul>
