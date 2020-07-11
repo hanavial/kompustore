@@ -12,14 +12,26 @@
           </div>
         </a>
       </li>
-      <li class="nav-item nav-category">Main Menu</li>
+      {{-- <li class="nav-item nav-category">Main Menu</li> --}}
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{url('/')}}">
           <i class="menu-icon typcn typcn-document-text"></i>
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="{{url('/')}}">
+          <i class="menu-icon typcn typcn-document-text"></i>
+          <span class="menu-title">Master</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url('/')}}">
+          <i class="menu-icon typcn typcn-document-text"></i>
+          <span class="menu-title">Penjualan</span>
+        </a>
+      </li>
+      {{-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="menu-icon typcn typcn-coffee"></i>
           <span class="menu-title">Basic UI Elements</span>
@@ -62,7 +74,7 @@
           <i class="menu-icon typcn typcn-user-outline"></i>
           <span class="menu-title">Icons</span>
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
           <i class="menu-icon typcn typcn-document-add"></i>
