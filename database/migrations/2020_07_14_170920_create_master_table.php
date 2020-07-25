@@ -15,6 +15,11 @@ class CreateMasterTable extends Migration
     {
         Schema::create('master', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_barang');
+            $table->integer('harga');
+            $table->integer('stok');
+            $table->foreignId('kategori_id');
+            $table->foreign('kategori_id')->references('id')->on('kategori')->onDelete('cascade');
             $table->timestamps();
         });
     }

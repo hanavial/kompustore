@@ -15,6 +15,8 @@ class CreatePenjualanTable extends Migration
     {
         Schema::create('penjualan', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_konsumen');
+            $table->text('alamat');
             $table->timestamps();
         });
     }
