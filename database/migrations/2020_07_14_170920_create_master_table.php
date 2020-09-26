@@ -13,13 +13,13 @@ class CreateMasterTable extends Migration
      */
     public function up()
     {
-        Schema::create('master', function (Blueprint $table) {
+        Schema::create('masters', function (Blueprint $table) {
             $table->id();
             $table->string('nama_barang');
             $table->integer('harga');
             $table->integer('stok');
             $table->foreignId('kategori_id');
-            $table->foreign('kategori_id')->references('id')->on('kategori')->onDelete('cascade');
+            $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade');
             $table->timestamps();
         });
     }
