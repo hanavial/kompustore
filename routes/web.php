@@ -18,5 +18,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::view('/', 'home');
-Route::view('/master', 'pages.master.index');
-Route::view('/penjualan', 'pages.penjualan.index');
+
+Route::group(['prefix' => 'master'], function () {
+    Route::view('/', 'pages.master.index');
+});
+
+Route::group(['prefix' => 'penjualan'], function () {
+    Route::view('/', 'pages.penjualan.index');
+});
