@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Master;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -13,7 +14,8 @@ class MasterController extends Controller
      */
     public function index()
     {
-        //
+        $masters = Master::with('kategori')->latest()->get();
+        // dd($masters);
     }
 
     /**
@@ -45,7 +47,8 @@ class MasterController extends Controller
      */
     public function show($id)
     {
-        //
+        $masters = Master::with('kategori')->findOrFail($id);
+        // dd($masters);
     }
 
     /**
@@ -56,7 +59,7 @@ class MasterController extends Controller
      */
     public function edit($id)
     {
-        //
+        $masters = Master::with('kategori')->findOrFail($id);
     }
 
     /**
