@@ -16,6 +16,7 @@ class MasterController extends Controller
     {
         $masters = Master::with('kategori')->latest()->get();
         // dd($masters);
+        return view('pages.master.index', compact('masters'));
     }
 
     /**
