@@ -12,7 +12,7 @@
           </div>
         </a>
       </li>
-      {{-- <li class="nav-item nav-category">Main Menu</li> --}}
+      <li class="nav-item nav-category">Menu</li>
       <li class="nav-item">
         <a class="nav-link" href="{{url('/')}}">
           <i class="menu-icon typcn typcn-document-text"></i>
@@ -25,6 +25,7 @@
           <span class="menu-title">Master</span>
         </a>
       </li>
+      <li class="nav-item nav-category">Penjualan</li>
       <li class="nav-item">
         <a class="nav-link" href="{{url('/penjualan')}}">
           <i class="menu-icon typcn typcn-document-text"></i>
