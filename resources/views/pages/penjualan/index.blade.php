@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Penjualan')
+@section('title','Kompustore Penjualan')
 @section('content')
     <!-- Page Title Header Starts-->
     <div class="row page-title-header">

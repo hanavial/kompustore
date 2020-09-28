@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Master Barang')
+@section('title','Kompustore Master Barang')
 @section('content')
 <!-- Page Title Header Starts-->
 <div class="row page-title-header">
@@ -53,7 +53,7 @@
                             @foreach ($masters as $master)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $master->nama_barang }}</td>
+                                <td><a href="{{ route('master.show',$master->id) }}">{{ $master->nama_barang }}</a></td>
                                 <td>Rp. {{ number_format($master->harga) }}</td>
                                 <td>{{ $master->stok }}</td>
                                 <td>{{ $master->kategori->kategori_nama }}</td>
