@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home');
 
 Route::group(['prefix' => 'master'], function () {
-    Route::get('/','MasterController@index');
+    Route::get('/','MasterController@index')->name('master.index');
+    Route::get('/{id}','MasterController@show')->name('master.show');
 });
 
 Route::group(['prefix' => 'penjualan'], function () {
