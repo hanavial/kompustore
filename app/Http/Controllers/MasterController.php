@@ -50,6 +50,7 @@ class MasterController extends Controller
     {
         $masters = Master::with('kategori')->findOrFail($id);
         // dd($masters);
+        return view('pages.master.show',compact('masters'));
     }
 
     /**
