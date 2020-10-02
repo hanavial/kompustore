@@ -16,6 +16,7 @@ class CreateMasterTable extends Migration
         Schema::create('masters', function (Blueprint $table) {
             $table->id();
             $table->string('nama_barang');
+            $table->string('slug');
             $table->integer('harga');
             $table->integer('stok');
             $table->foreignId('kategori_id');
