@@ -53,7 +53,7 @@
                             @foreach ($masters as $master)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td><a href="{{ route('master.show',$master->id) }}">{{ $master->nama_barang }}</a></td>
+                                <td><a href="{{ route('master.show',$master->slug) }}">{{ $master->nama_barang }}</a></td>
                                 <td>Rp. {{ number_format($master->harga) }}</td>
                                 <td>{{ $master->stok }}</td>
                                 <td>{{ $master->kategori->kategori_nama }}</td>

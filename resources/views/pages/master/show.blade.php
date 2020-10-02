@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $masters->nama_barang)
+@section('title', $master->nama_barang)
 @section('content')
 <div class="row page-title-header">
     <div class="col-12">
@@ -21,8 +21,9 @@
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
-                    <h4 class="mb-0">{{ $masters->nama_barang }}</h4>
+                    <h4 class="mb-0">{{ $master->nama_barang }}</h4>
                 </div>
+                <p>{{ $master->kategori->kategori_nama }}</p>
             </div>
         </div>
     </div>
