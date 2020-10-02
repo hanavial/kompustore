@@ -46,11 +46,11 @@ class MasterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Master $master)
     {
-        $masters = Master::with('kategori')->findOrFail($id);
+        // $master = Master::with('kategori')->findOrFail($slug);
         // dd($masters);
-        return view('pages.master.show',compact('masters'));
+        return view('pages.master.show',compact('master'));
     }
 
     /**
