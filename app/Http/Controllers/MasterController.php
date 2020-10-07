@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\MasterRequest;
-use App\Models\Kategori;
 use App\Models\Master;
+use App\Models\Kategori;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Requests\MasterRequest;
 
 class MasterController extends Controller
 {
@@ -42,7 +43,7 @@ class MasterController extends Controller
     {
         Master::create([
             'nama_barang' => $request->nama_barang,
-            'slug' => \Str::slug($request->nama_barang),
+            'slug' => Str::slug($request->nama_barang),
             'harga' => $request->harga,
             'stok' => $request->stok,
             'kategori_id' => $request->kategori_id,
