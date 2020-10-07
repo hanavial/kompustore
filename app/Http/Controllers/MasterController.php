@@ -49,6 +49,9 @@ class MasterController extends Controller
             'kategori_id' => $request->kategori_id,
         ]);
 
+        alert()->success('Master','Sukses tambah data master baru');
+
+
         return redirect()->route('master.index');
     }
 
