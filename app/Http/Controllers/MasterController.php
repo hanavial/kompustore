@@ -51,7 +51,6 @@ class MasterController extends Controller
 
         alert()->success('Master','Sukses tambah data master baru');
 
-
         return redirect()->route('master.index');
     }
 
