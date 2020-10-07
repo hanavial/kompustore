@@ -22,7 +22,7 @@
     <div class="col-md-12">
         <div class="page-header-toolbar">
             <div class="sort-wrapper">
-                <button type="button" class="btn btn-primary toolbar-item">New</button>
+                <a href="{{ route('master.create') }}" class="btn btn-primary toolbar-item">Tambah Barang</a>
             </div>
         </div>
     </div>
