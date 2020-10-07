@@ -30,7 +30,7 @@
                             <input id="nama_alat" type="text" class="form-control" name="nama_barang"
                                 value="{{ old('nama_barang') }}" required>
                             @if ($errors->has('nama_barang'))
-                            <span class="help-block">
+                            <span class="help-block mt-2">
                                 <strong class="text-danger">{{ $errors->first('nama_barang') }}</strong>
                             </span>
                             @endif
@@ -42,7 +42,7 @@
                             <input id="harga" type="number" class="form-control" name="harga" value="{{ old('harga') }}"
                                 required>
                             @if ($errors->has('harga'))
-                            <span class="help-block">
+                            <span class="help-block mt-2">
                                 <strong class="text-danger">{{ $errors->first('harga') }}</strong>
                             </span>
                             @endif
@@ -54,7 +54,7 @@
                             <input id="stok" type="number" class="form-control" name="stok" value="{{ old('stok') }}"
                                 required>
                             @if ($errors->has('stok'))
-                            <span class="help-block">
+                            <span class="help-block mt-2">
                                 <strong class="text-danger">{{ $errors->first('stok') }}</strong>
                             </span>
                             @endif
