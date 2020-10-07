@@ -31,7 +31,7 @@
                                 value="{{ old('nama_barang') }}" required>
                             @if ($errors->has('nama_barang'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('nama_barang') }}</strong>
+                                <strong class="text-danger">{{ $errors->first('nama_barang') }}</strong>
                             </span>
                             @endif
                         </div>
@@ -43,7 +43,7 @@
                                 required>
                             @if ($errors->has('harga'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('harga') }}</strong>
+                                <strong class="text-danger">{{ $errors->first('harga') }}</strong>
                             </span>
                             @endif
                         </div>
@@ -55,7 +55,7 @@
                                 required>
                             @if ($errors->has('stok'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('stok') }}</strong>
+                                <strong class="text-danger">{{ $errors->first('stok') }}</strong>
                             </span>
                             @endif
                         </div>
