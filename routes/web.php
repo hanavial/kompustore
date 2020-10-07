@@ -21,7 +21,9 @@ Route::view('/', 'home');
 
 Route::group(['prefix' => 'master'], function () {
     Route::get('/','MasterController@index')->name('master.index');
+    Route::get('/create','MasterController@create')->name('master.create');
     Route::get('/{master:slug}','MasterController@show')->name('master.show');
+    Route::post('/store','MasterController@store')->name('master.store');
 });
 
 Route::group(['prefix' => 'penjualan'], function () {
