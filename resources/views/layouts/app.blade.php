@@ -61,5 +61,6 @@
     <!-- Custom js for this page-->
     <script src="{{url('assets/js/demo_1/dashboard.js')}}"></script>
     <!-- End custom js for this page-->
+    @include('sweetalert::alert')
   </body>
 </html>
