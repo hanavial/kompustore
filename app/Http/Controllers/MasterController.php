@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MasterRequest;
+use App\Models\Kategori;
 use App\Models\Master;
 use Illuminate\Http\Request;
 
@@ -26,7 +28,8 @@ class MasterController extends Controller
      */
     public function create()
     {
-        //
+        $kategoris = Kategori::get();
+        return view('pages.master.create', compact('kategoris'));
     }
 
     /**
@@ -35,9 +38,17 @@ class MasterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MasterRequest $request)
     {
-        //
+        Master::create([
+            'nama_barang' => $request->nama_barang,
+            'slug' => \Str::slug($request->nama_barang),
+            'harga' => $request->harga,
+            'stok' => $request->stok,
+            'kategori_id' => $request->kategori_id,
+        ]);
+
+        return redirect()->route('master.index');
     }
 
     /**
