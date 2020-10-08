@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
  [Master Stylesheet]
 
-  Project:	Star Admin Free 
+  Project:	Star Admin Free
   Version:	3.5
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------
@@ -10265,7 +10265,7 @@ pre {
   .form-control.form-control-lg {
     padding: 0.5rem 0.75rem; }
   .form-control.form-control-sm {
-    padding: 0.25rem 0.75rem; }
+    padding: 0.25rem 0.95rem; }
 
 textarea.form-control {
   height: auto;
