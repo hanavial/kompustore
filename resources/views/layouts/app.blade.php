@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{url('assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{url('assets/vendors/css/vendor.bundle.addons.css')}}">
+    <link rel="stylesheet" href="{{url('datatable/dataTables.bootstrap4.css') }}">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -60,6 +61,13 @@
     <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="{{url('assets/js/demo_1/dashboard.js')}}"></script>
+    <script type="text/javascript" src="{{url('datatable/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{url('datatable/dataTables.bootstrap4.min.js') }}"></script>
+    <script>
+        $(document).ready( function () {
+            $('#table').DataTable();
+        } );
+    </script>
     <!-- End custom js for this page-->
     @include('sweetalert::alert')
   </body>
