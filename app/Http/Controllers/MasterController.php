@@ -17,7 +17,7 @@ class MasterController extends Controller
      */
     public function index()
     {
-        $masters = Master::with('kategori')->latest()->get();
+        $masters = Master::with('kategori')->get();
         // dd($masters);
         return view('pages.master.index', compact('masters'));
     }
