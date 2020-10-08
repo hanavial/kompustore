@@ -73,9 +73,10 @@ class MasterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Master $master)
     {
-        $masters = Master::with('kategori')->findOrFail($id);
+        $kategoris = Kategori::get();
+        return view('pages.master.edit',compact('master','kategoris'));
     }
 
     /**
@@ -85,9 +86,19 @@ class MasterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MasterRequest $request, Master $master)
     {
-        //
+        $master->update([
+            'nama_barang' => $request->nama_barang,
+            'slug' => Str::slug($request->nama_barang),
+            'harga' => $request->harga,
+            'stok' => $request->stok,
+            'kategori_id' => $request->kategori_id,
+        ]);
+
+        alert()->success('Master','Sukses edit data master');
+
+        return redirect()->route('master.index');
     }
 
     /**
