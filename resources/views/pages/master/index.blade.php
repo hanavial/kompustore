@@ -59,7 +59,7 @@
                                 <td>{{ $master->kategori->kategori_nama }}</td>
                                 <td>
                                     <div class="column">
-                                        <a href="#" class="btn btn-warning"><i
+                                        <a href="{{ route('master.edit',$master->slug) }}" class="btn btn-warning"><i
                                                 class="menu-icon typcn typcn-pencil"></i></a>
                                         <a href="#" class="btn btn-danger"><i
                                                 class="menu-icon typcn typcn-trash"></i></a>
