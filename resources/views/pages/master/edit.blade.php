@@ -2,7 +2,9 @@
 
 @section('title', 'Kompustore Tambah Master Barang')
 @section('content')
-<form action="" method="POST">
+<form action="{{ route('master.store') }}" method="POST">
+    @csrf
+    @method('post')
     <div class="row page-title-header">
         <div class="col-12">
             <div class="page-header">
@@ -28,8 +30,8 @@
                             <input id="nama_alat" type="text" class="form-control" name="nama_barang"
                                 value="{{ old('nama_barang') }}" required>
                             @if ($errors->has('nama_barang'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('nama_barang') }}</strong>
+                            <span class="help-block mt-2">
+                                <strong class="text-danger">{{ $errors->first('nama_barang') }}</strong>
                             </span>
                             @endif
                         </div>
@@ -40,8 +42,8 @@
                             <input id="harga" type="number" class="form-control" name="harga" value="{{ old('harga') }}"
                                 required>
                             @if ($errors->has('harga'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('harga') }}</strong>
+                            <span class="help-block mt-2">
+                                <strong class="text-danger">{{ $errors->first('harga') }}</strong>
                             </span>
                             @endif
                         </div>
@@ -52,16 +54,16 @@
                             <input id="stok" type="number" class="form-control" name="stok" value="{{ old('stok') }}"
                                 required>
                             @if ($errors->has('stok'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('stok') }}</strong>
+                            <span class="help-block mt-2">
+                                <strong class="text-danger">{{ $errors->first('stok') }}</strong>
                             </span>
                             @endif
                         </div>
                     </div>
-                    <div class="form-group{{ $errors->has('kategori') ? ' has-error' : '' }}">
-                        <label for="kategori" class="col-md-4 control-label">Kategori</label>
+                    <div class="form-group{{ $errors->has('kategori_id') ? ' has-error' : '' }}">
+                        <label for="kategori_id" class="col-md-4 control-label">Kategori</label>
                         <div class="col-md-4">
-                            <select class="form-control" name="kategori" required="">
+                            <select class="form-control" name="kategori_id" required="">
                                 <option value=""></option>
                                 @foreach ($kategoris as $kategori)
                                 <option value="{{ $kategori->id }}">{{ $kategori->kategori_nama }}</option>
