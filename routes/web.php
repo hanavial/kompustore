@@ -23,6 +23,7 @@ Route::group(['prefix' => 'master'], function () {
     Route::get('/','MasterController@index')->name('master.index');
     Route::get('/create','MasterController@create')->name('master.create');
     Route::get('/{master:slug}','MasterController@show')->name('master.show');
+    Route::get('/kategori/{kategori:slug}','MasterController@showByCategory')->name('master.showByCategory');
     Route::get('/{master:slug}/edit','MasterController@edit')->name('master.edit');
     Route::post('/store','MasterController@store')->name('master.store');
     Route::put('/{master:slug}/edit','MasterController@update')->name('master.update');
