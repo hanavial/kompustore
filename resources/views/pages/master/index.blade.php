@@ -6,23 +6,17 @@
 <div class="row page-title-header">
     <div class="col-12">
         <div class="page-header">
-            <h4 class="page-title">Master</h4>
-            <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
-                <ul class="quick-links">
-                    <li><a href="#">ICE Market data</a></li>
-                </ul>
-                <ul class="quick-links ml-auto">
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Watchlist</a></li>
-                </ul>
-            </div>
+            @isset($kategori)
+                <h4 class="page-title">Master Kategori {{ $kategori->kategori_nama }}</h4>
+            @else
+                <h4 class="page-title">Master</h4>
+            @endisset
         </div>
     </div>
     <div class="col-md-12">
         <div class="page-header-toolbar">
             <div class="sort-wrapper">
-                <button type="button" class="btn btn-primary toolbar-item">New</button>
+                <a href="{{ route('master.create') }}" class="btn btn-primary toolbar-item">Tambah Barang</a>
             </div>
         </div>
     </div>
@@ -37,7 +31,7 @@
                 </div>
                 <p>List nama barang yang ada di master barang</p>
                 <div class="table-responsive">
-                    <table class="table table-striped table-hover">
+                    <table class="table table-striped table-hover" id="table">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -50,23 +44,33 @@
                         </thead>
                         <tbody>
                             {{-- {{ $no = 1 }} --}}
-                            @foreach ($masters as $master)
+                            @forelse ($masters as $master)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td><a href="{{ route('master.show',$master->slug) }}">{{ $master->nama_barang }}</a></td>
+                                <td><a href="{{ route('master.show',$master->slug) }}">{{ $master->nama_barang }}</a>
+                                </td>
                                 <td>Rp. {{ number_format($master->harga) }}</td>
                                 <td>{{ $master->stok }}</td>
-                                <td>{{ $master->kategori->kategori_nama }}</td>
+                                <td><a href="{{ route('master.showByCategory',$master->kategori->slug) }}">{{ $master->kategori->kategori_nama }}</a></td>
                                 <td>
-                                    <div class="column">
-                                        <a href="#" class="btn btn-warning"><i
+                                    <div class="row">
+                                        <a href="{{ route('master.edit',$master->slug) }}" class="btn btn-warning"><i
                                                 class="menu-icon typcn typcn-pencil"></i></a>
-                                        <a href="#" class="btn btn-danger"><i
-                                                class="menu-icon typcn typcn-trash"></i></a>
+                                        <form action="{{ route('master.destroy', $master->slug) }}" method="post"
+                                            class="form-del">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-danger delete"><i
+                                                    class="menu-icon typcn typcn-trash"></i></button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach
+                            @empty
+                            <tr>
+                                <td colspan="6" align="center">Tidak ada data master</td>
+                            </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
@@ -74,4 +78,26 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script type="text/javascript">
+    $('.delete').on('click', function (event) {
+        var form =  $(this).closest("form");
+        event.preventDefault();
+        swal({
+            title: 'Apakah Anda Yakin?',
+            text: "Anda Tidak Akan Dapat Mengembalikannya!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus'
+        }).then((willDelete) => {
+        if (willDelete) {
+          form.submit();
+        }
+      });
+    });
+</script>
 @endsection

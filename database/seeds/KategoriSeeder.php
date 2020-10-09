@@ -13,15 +13,18 @@ class KategoriSeeder extends Seeder
     public function run()
     {
         Kategori::create([
-            'kategori_nama' => 'processor'
+            'kategori_nama' => 'Processor',
+            'slug' => 'processor'
         ]);
 
         Kategori::create([
-            'kategori_nama' => 'storage'
+            'kategori_nama' => 'Storage',
+            'slug' => 'storage'
         ]);
 
         Kategori::create([
-            'kategori_nama' => 'alat'
+            'kategori_nama' => 'Alat',
+            'slug' => 'alat'
         ]);
     }
 }
