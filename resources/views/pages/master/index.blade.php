@@ -50,7 +50,7 @@
                         </thead>
                         <tbody>
                             {{-- {{ $no = 1 }} --}}
-                            @foreach ($masters as $master)
+                            @forelse ($masters as $master)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td><a href="{{ route('master.show',$master->slug) }}">{{ $master->nama_barang }}</a>
@@ -72,7 +72,11 @@
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach
+                            @empty
+                            <tr>
+                                <td colspan="6" align="center">Tidak ada data master</td>
+                            </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
