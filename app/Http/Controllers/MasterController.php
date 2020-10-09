@@ -107,8 +107,12 @@ class MasterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Master $master)
     {
-        //
+        $master->delete();
+
+        alert()->success('Master','Sukses hapus data master');
+
+        return redirect()->route('master.index');
     }
 }
