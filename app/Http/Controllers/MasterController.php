@@ -41,6 +41,12 @@ class MasterController extends Controller
         return view('pages.master.show', compact('master'));
     }
 
+    public function showByCategory(Kategori $kategori)
+    {
+        $masters = $kategori->masters()->get();
+        return view('pages.master.index', compact('masters','kategori'));
+    }
+
     public function edit(Master $master)
     {
         $kategoris = Kategori::get();
