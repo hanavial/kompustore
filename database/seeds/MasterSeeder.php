@@ -27,5 +27,6 @@ class MasterSeeder extends Seeder
             'stok' => '40',
             'kategori_id' => 2
         ]);
+        factory(Master::class,48)->create();
     }
 }
