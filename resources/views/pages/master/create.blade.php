@@ -63,12 +63,14 @@
                     <div class="form-group{{ $errors->has('kategori_id') ? ' has-error' : '' }}">
                         <label for="kategori_id" class="col-md-4 control-label">Kategori</label>
                         <div class="col-md-4">
-                            <select class="form-control" name="kategori_id" required="">
-                                <option value="">Pilih Kategori</option>
-                                @foreach ($kategoris as $kategori)
-                                <option value="{{ $kategori->id }}">{{ $kategori->kategori_nama }}</option>
-                                @endforeach
-                            </select>
+                            <form action="" method="post">
+                                <select class="form-control" name="kategori_id" id="select" required="">
+                                    <option value="">Pilih Kategori</option>
+                                    @foreach ($kategoris as $kategori)
+                                    <option value="{{ $kategori->id }}">{{ $kategori->kategori_nama }}</option>
+                                    @endforeach
+                                </select>
+                            </form>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary" id="submit">
