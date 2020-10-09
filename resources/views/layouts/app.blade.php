@@ -62,10 +62,10 @@
     <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="{{url('assets/js/demo_1/dashboard.js')}}"></script>
-    <script type="text/javascript" src="{{url('datatable/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript" src="{{url('datatable/dataTables.bootstrap4.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{url('datatable/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{url('datatable/dataTables.bootstrap4.min.js') }}"></script>
     <script>
         $(document).ready( function () {
             $('#table').DataTable();
