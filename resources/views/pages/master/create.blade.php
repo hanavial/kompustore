@@ -64,7 +64,7 @@
                         <label for="kategori_id" class="col-md-4 control-label">Kategori</label>
                         <div class="col-md-4">
                             <select class="form-control" name="kategori_id" required="">
-                                <option value=""></option>
+                                <option value="">Pilih Kategori</option>
                                 @foreach ($kategoris as $kategori)
                                 <option value="{{ $kategori->id }}">{{ $kategori->kategori_nama }}</option>
                                 @endforeach
