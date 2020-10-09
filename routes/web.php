@@ -26,6 +26,7 @@ Route::group(['prefix' => 'master'], function () {
     Route::get('/{master:slug}/edit','MasterController@edit')->name('master.edit');
     Route::post('/store','MasterController@store')->name('master.store');
     Route::put('/{master:slug}/edit','MasterController@update')->name('master.update');
+    Route::delete('/{master:slug}/destroy','MasterController@destroy')->name('master.destroy');
 });
 
 Route::group(['prefix' => 'penjualan'], function () {
