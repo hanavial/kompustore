@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="{{url('assets/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{url('assets/vendors/css/vendor.bundle.addons.css')}}">
     <link rel="stylesheet" href="{{url('datatable/dataTables.bootstrap4.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
     <link rel="stylesheet" href="{{url('select2/css/select2.min.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -66,8 +66,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="{{url('select2/js/select2.min.js') }}"></script>
-    <script type="text/javascript" src="{{url('datatable/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript" src="{{url('datatable/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{url('datatable/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+    <script src="{{url('datatable/dataTables.bootstrap4.min.js') }}" type="text/javascript"></script>
     <script>
         $(document).ready( function () {
             $('#table').DataTable();
