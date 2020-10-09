@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{url('assets/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{url('assets/vendors/css/vendor.bundle.addons.css')}}">
     <link rel="stylesheet" href="{{url('datatable/dataTables.bootstrap4.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -63,11 +64,14 @@
     <script src="{{url('assets/js/demo_1/dashboard.js')}}"></script>
     <script type="text/javascript" src="{{url('datatable/jquery.dataTables.min.js') }}"></script>
     <script type="text/javascript" src="{{url('datatable/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script>
         $(document).ready( function () {
             $('#table').DataTable();
         } );
     </script>
+    @yield('js')
     <!-- End custom js for this page-->
     @include('sweetalert::alert')
   </body>

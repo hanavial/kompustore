@@ -53,16 +53,22 @@
                             @foreach ($masters as $master)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td><a href="{{ route('master.show',$master->slug) }}">{{ $master->nama_barang }}</a></td>
+                                <td><a href="{{ route('master.show',$master->slug) }}">{{ $master->nama_barang }}</a>
+                                </td>
                                 <td>Rp. {{ number_format($master->harga) }}</td>
                                 <td>{{ $master->stok }}</td>
                                 <td>{{ $master->kategori->kategori_nama }}</td>
                                 <td>
-                                    <div class="column">
+                                    <div class="row">
                                         <a href="{{ route('master.edit',$master->slug) }}" class="btn btn-warning"><i
                                                 class="menu-icon typcn typcn-pencil"></i></a>
-                                        <a href="#" class="btn btn-danger"><i
-                                                class="menu-icon typcn typcn-trash"></i></a>
+                                        <form action="{{ route('master.destroy', $master->slug) }}" method="post"
+                                            class="form-del">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-danger delete"><i
+                                                    class="menu-icon typcn typcn-trash"></i></button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>
@@ -74,4 +80,26 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script type="text/javascript">
+    $('.delete').on('click', function (event) {
+        var form =  $(this).closest("form");
+        event.preventDefault();
+        swal({
+            title: 'Apakah Anda Yakin?',
+            text: "Anda Tidak Akan Dapat Mengembalikannya!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus'
+        }).then((willDelete) => {
+        if (willDelete) {
+          form.submit();
+        }
+      });
+    });
+</script>
 @endsection
