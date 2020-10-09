@@ -6,17 +6,11 @@
 <div class="row page-title-header">
     <div class="col-12">
         <div class="page-header">
-            <h4 class="page-title">Master</h4>
-            <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
-                <ul class="quick-links">
-                    <li><a href="#">ICE Market data</a></li>
-                </ul>
-                <ul class="quick-links ml-auto">
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Watchlist</a></li>
-                </ul>
-            </div>
+            @isset($kategori)
+                <h4 class="page-title">Master Kategori {{ $kategori->kategori_nama }}</h4>
+            @else
+                <h4 class="page-title">Master</h4>
+            @endisset
         </div>
     </div>
     <div class="col-md-12">
@@ -57,7 +51,7 @@
                                 </td>
                                 <td>Rp. {{ number_format($master->harga) }}</td>
                                 <td>{{ $master->stok }}</td>
-                                <td>{{ $master->kategori->kategori_nama }}</td>
+                                <td><a href="{{ route('master.showByCategory',$master->kategori->slug) }}">{{ $master->kategori->kategori_nama }}</a></td>
                                 <td>
                                     <div class="row">
                                         <a href="{{ route('master.edit',$master->slug) }}" class="btn btn-warning"><i
