@@ -65,11 +65,12 @@
                         <div class="col-md-4">
                             <form action="" method="post">
                                 <select class="form-control" name="kategori_id" id="select" required="">
-                                    <option value="{{ $master->kategori->id }}">{{ $master->kategori->kategori_nama }}</option>
+                                    {{-- <option value="{{ $master->kategori->id }}">{{ $master->kategori->kategori_nama }}</option> --}}
                                     @foreach ($kategoris as $kategori)
-                                        @if ($kategori->id != $master->kategori->id)
+                                        {{-- @if ($kategori->id != $master->kategori->id)
                                             <option value="{{ $kategori->id }}">{{ $kategori->kategori_nama }}</option>
-                                        @endif
+                                        @endif --}}
+                                        <option {{ $kategori->id == $master->kategori->id ? 'selected' : '' }} value="{{ $kategori->id }}">{{ $kategori->kategori_nama }}</option>
                                     @endforeach
                                 </select>
                             </form>
