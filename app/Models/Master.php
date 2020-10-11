@@ -12,7 +12,7 @@ class Master extends Model
      * @var array
      */
     protected $fillable = ['nama_barang','slug','harga','stok','kategori_id'];
-    protected $with = ['kategori','detail_penjualans'];
+    protected $with = ['kategori'];
 
     public function kategori()
     {
