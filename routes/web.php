@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home');
 
-Route::group(['prefix' => 'master'], function () {
-    Route::get('/','MasterController@index')->name('master.index');
-    Route::get('/create','MasterController@create')->name('master.create');
-    Route::get('/{master:slug}','MasterController@show')->name('master.show');
-    Route::get('/kategori/{kategori:slug}','MasterController@showByCategory')->name('master.showByCategory');
-    Route::get('/{master:slug}/edit','MasterController@edit')->name('master.edit');
-    Route::post('/store','MasterController@store')->name('master.store');
-    Route::put('/{master:slug}/edit','MasterController@update')->name('master.update');
-    Route::delete('/{master:slug}/destroy','MasterController@destroy')->name('master.destroy');
+Route::group(['prefix' => 'master','as' => 'master.'], function () {
+    Route::get('/','MasterController@index')->name('index');
+    Route::get('/create','MasterController@create')->name('create');
+    Route::get('/{master:slug}','MasterController@show')->name('show');
+    Route::get('/kategori/{kategori:slug}','MasterController@showByCategory')->name('showByCategory');
+    Route::get('/{master:slug}/edit','MasterController@edit')->name('edit');
+    Route::post('/store','MasterController@store')->name('store');
+    Route::put('/{master:slug}/edit','MasterController@update')->name('update');
+    Route::delete('/{master:slug}/destroy','MasterController@destroy')->name('destroy');
 });
 
 Route::group(['prefix' => 'penjualan'], function () {
