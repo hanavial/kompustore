@@ -11,13 +11,13 @@ class MasterController extends Controller
 {
     public function index()
     {
-        $masters = Master::with('kategori')->get();
+        $masters = Master::get();
         return view('pages.master.index', compact('masters'));
     }
 
     public function create()
     {
-        $kategoris = Kategori::with('masters')->get();
+        $kategoris = Kategori::get();
         return view('pages.master.create', compact('kategoris'));
     }
 
@@ -49,7 +49,7 @@ class MasterController extends Controller
 
     public function edit(Master $master)
     {
-        $kategoris = Kategori::with('masters')->get();
+        $kategoris = Kategori::get();
         return view('pages.master.edit', compact('master', 'kategoris'));
     }
 
