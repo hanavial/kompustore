@@ -17,7 +17,7 @@ class MasterController extends Controller
 
     public function create()
     {
-        $kategoris = Kategori::get();
+        $kategoris = Kategori::with('masters')->get();
         return view('pages.master.create', compact('kategoris'));
     }
 
@@ -49,7 +49,7 @@ class MasterController extends Controller
 
     public function edit(Master $master)
     {
-        $kategoris = Kategori::get();
+        $kategoris = Kategori::with('masters')->get();
         return view('pages.master.edit', compact('master', 'kategoris'));
     }
 
